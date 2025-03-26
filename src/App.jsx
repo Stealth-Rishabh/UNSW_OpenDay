@@ -56,15 +56,14 @@ export default function UNSWOpenDay() {
           <div className="p-4">
             {/* Header */}
             <div className="mb-4">
-              <p className="text-sm text-gray-600">Saturday, April 12</p>
               <h1 className="text-4xl font-bold text-purple-900">
-                UNSW India Open Day 2025 - Bangalore
+                UNSW India Open Day 2025
               </h1>
             </div>
 
             {/* Description */}
             <p className="text-sm text-gray-700 mb-6">
-              UNSW Sydney is coming to Bangalore! Meet our academics, get
+              UNSW Sydney is coming to India! Meet our academics, get
               application advice and fee waivers, and attend our Employability
               Masterclass.
             </p>
@@ -87,25 +86,82 @@ export default function UNSWOpenDay() {
               </div>
             </div>
 
-            {/* Location */}
+            {/* Event Schedule Table */}
             <div className="mb-6">
-              <h2 className="text-lg font-bold mb-2">Location</h2>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gray-500 mt-0.5" />
-                <div>
-                  <p className="text-sm font-medium">
-                    Shangri-La Bengaluru Hotel, Palace Road
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Date and Time */}
-            <div className="mb-6">
-              <h2 className="text-lg font-bold mb-2">Date and time</h2>
-              <div className="flex items-start gap-3">
-                <Calendar className="w-5 h-5 text-gray-500 mt-0.5" />
-                <p className="text-sm">Saturday, April 12 · 11 - 3pm IST</p>
+              <h2 className="text-lg font-bold mb-2">Event Schedule</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr>
+                      <th className="border border-yellow-300 bg-white p-2"></th>
+                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Bangalore
+                      </th>
+                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Mumbai
+                      </th>
+                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Chennai
+                      </th>
+                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Delhi
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Date
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Saturday 12 April
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Sunday 13 April
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Monday 14 April
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Tuesday 15 April
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Time
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        11:00 - 15:00
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        12:00 - 16:00
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        11:00 - 15:00
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        16:00 - 20:00
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-yellow-300 bg-white p-2 font-semibold">
+                        Venue
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Shangri-La Bengaluru Hotel, Palace Road
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        The Leela Hotel, Sahar Airport Road
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Hyatt Regency Hotel, Anna Salai Road
+                      </td>
+                      <td className="border border-yellow-300 bg-white p-2">
+                        Taj Mahal Hotel, Man Singh Road
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
 
@@ -170,9 +226,9 @@ export default function UNSWOpenDay() {
               </div>
 
               <p className="text-sm mb-3">
-                Join us at UNSW India Open Day in Bangalore to chat with our
-                world-leading academics from Sydney, and learn about our
-                scholarships and pathways for students in India.
+                Join us at UNSW India Open Day to chat with our world-leading
+                academics from Sydney, and learn about our scholarships and
+                pathways for students in India.
               </p>
 
               <p className="text-sm mb-3">
