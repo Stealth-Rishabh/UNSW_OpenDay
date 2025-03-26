@@ -105,7 +105,7 @@ export default function UNSWOpenDay() {
               <h2 className="text-lg font-bold mb-2">Date and time</h2>
               <div className="flex items-start gap-3">
                 <Calendar className="w-5 h-5 text-gray-500 mt-0.5" />
-                <p className="text-sm">Saturday, April 12 · 12 - 3pm IST</p>
+                <p className="text-sm">Saturday, April 12 · 11 - 3pm IST</p>
               </div>
             </div>
 
