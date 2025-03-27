@@ -291,7 +291,7 @@ export default function UNSWOpenDay() {
           <div className="bg-gray-100 rounded-lg p-2 shadow-sm text-center">
             <h3 className="text-xl text-slate-600 mb-4">Free</h3>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSehT0OPa_2j9zTCLOxkpjEIu-XadfR1VaLjITl1J0Uz5pm4_g/viewform"
+              href="https://forms.gle/3Xe2f9GSgtzjbVKZ6"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-orange-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-orange-700 transition-colors"
