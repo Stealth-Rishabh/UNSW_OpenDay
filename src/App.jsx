@@ -4,24 +4,8 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 import Image from "../src/assets/unsw-student-banner.png";
 import resBanner from "../src/assets/responsive-banner-unsw.avif";
 import PlanetLogo from "../src/assets/Planet_logo.png";
-import { useState, useEffect } from "react";
 
 export default function UNSWOpenDay() {
-  const [showFixedTickets, setShowFixedTickets] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const banner = document.querySelector(".banner-section");
-      if (banner) {
-        const bannerBottom = banner.getBoundingClientRect().bottom;
-        setShowFixedTickets(bannerBottom < 0);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="mx-auto font-sans overflow-x-hidden w-full">
       {/* Banner with pattern background - full width */}
@@ -112,74 +96,74 @@ export default function UNSWOpenDay() {
             <div className="mb-6">
               <h2 className="text-lg font-bold mb-2">Event Schedule</h2>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table className="w-full border-collapse text-xs md:text-base">
                   <thead>
                     <tr>
-                      <th className="border border-yellow-300 bg-white p-2"></th>
-                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <th className="border border-yellow-300 bg-white p-1 md:p-2"></th>
+                      <th className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Bangalore
                       </th>
-                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <th className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Mumbai
                       </th>
-                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <th className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Chennai
                       </th>
-                      <th className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <th className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Delhi
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Date
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         Saturday 12 April
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         Sunday 13 April
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         Monday 14 April
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         Tuesday 15 April
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Time
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         11:00 - 15:00
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         12:00 - 16:00
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         11:00 - 15:00
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
                         16:00 - 20:00
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-yellow-300 bg-white p-2 font-semibold">
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2 font-semibold">
                         Venue
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
-                        Shangri-La Bengaluru Hotel, Palace Road
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
+                        Shangri-La Bengaluru Hotel
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
-                        The Leela Hotel, Sahar Airport Road
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
+                        The Leela Hotel
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
-                        Hyatt Regency Hotel, Anna Salai Road
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
+                        Hyatt Regency Hotel
                       </td>
-                      <td className="border border-yellow-300 bg-white p-2">
-                        Taj Mahal Hotel, Man Singh Road
+                      <td className="border border-yellow-300 bg-white p-1 md:p-2">
+                        Taj Mahal Hotel
                       </td>
                     </tr>
                   </tbody>
@@ -318,14 +302,10 @@ export default function UNSWOpenDay() {
         </div>
       </div>
 
-      {/* Mobile fixed ticket section */}
-      <div
-        className={`fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg md:hidden transform transition-transform duration-300 ${
-          showFixedTickets ? "translate-y-0" : "translate-y-full"
-        }`}
-      >
+      {/* Mobile fixed ticket section - removed conditional visibility */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg md:hidden">
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-2">
-          <h3 className="text-xl text-slate-600">Free</h3>
+          <h3 className="text-xl text-slate-600 font-semibold">Free</h3>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSehT0OPa_2j9zTCLOxkpjEIu-XadfR1VaLjITl1J0Uz5pm4_g/viewform"
             target="_blank"
