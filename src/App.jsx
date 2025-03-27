@@ -2,6 +2,7 @@
 
 import { Calendar, Clock, MapPin } from "lucide-react";
 import Image from "../src/assets/unsw-student-banner.png";
+import resBanner from "../src/assets/responsive-banner-unsw.avif";
 import PlanetLogo from "../src/assets/Planet_logo.png";
 import { useState, useEffect } from "react";
 
@@ -58,9 +59,14 @@ export default function UNSWOpenDay() {
         {/* Banner image */}
         <div className="relative">
           <img
+            src={resBanner}
+            alt="UNSW student with yellow bag"
+            className="w-full h-auto block md:hidden"
+          />
+          <img
             src={Image}
             alt="UNSW student with yellow bag"
-            className="w-[200%] h-auto"
+            className="w-[200%] h-auto hidden md:block"
           />
         </div>
       </div>
