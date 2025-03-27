@@ -3,12 +3,28 @@
 import { Calendar, Clock, MapPin } from "lucide-react";
 import Image from "../src/assets/unsw-student-banner.png";
 import PlanetLogo from "../src/assets/Planet_logo.png";
+import { useState, useEffect } from "react";
 
 export default function UNSWOpenDay() {
+  const [showFixedTickets, setShowFixedTickets] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const banner = document.querySelector(".banner-section");
+      if (banner) {
+        const bannerBottom = banner.getBoundingClientRect().bottom;
+        setShowFixedTickets(bannerBottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="mx-auto font-sans">
       {/* Banner with pattern background - full width */}
-      <div className="relative w-full mb-6 overflow-hidden rounded-lg">
+      <div className="relative w-full mb-6 overflow-hidden rounded-lg banner-section">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-blue-50">
           <div className="absolute -left-20 top-0 h-full w-1/3">
@@ -179,7 +195,7 @@ export default function UNSWOpenDay() {
               <div className="border-l-4 border-blue-200 bg-blue-50 pl-4 py-3 mb-3">
                 <p className="text-xs text-gray-500">12:00 PM - 1:00 PM</p>
                 <p className="font-medium">
-                  Employability Masterclass{" "}
+                  Employability Masterclass
                   <span className="text-sm text-gray-500">
                     (separate registration essential)
                   </span>
@@ -280,9 +296,9 @@ export default function UNSWOpenDay() {
           </div>
         </div>
 
-        {/* Sticky ticket section */}
-        <div className="w-60 h-fit sticky top-6">
-          <div className=" bg-gray-100 rounded-lg p-2 shadow-sm text-center">
+        {/* Desktop sticky ticket section */}
+        <div className="w-60 h-fit sticky top-6 hidden md:block">
+          <div className="bg-gray-100 rounded-lg p-2 shadow-sm text-center">
             <h3 className="text-xl text-slate-600 mb-4">Free</h3>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSehT0OPa_2j9zTCLOxkpjEIu-XadfR1VaLjITl1J0Uz5pm4_g/viewform"
@@ -293,6 +309,25 @@ export default function UNSWOpenDay() {
               Get Tickets
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile fixed ticket section */}
+      <div
+        className={`fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg md:hidden transform transition-transform duration-300 ${
+          showFixedTickets ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-2">
+          <h3 className="text-xl text-slate-600">Free</h3>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSehT0OPa_2j9zTCLOxkpjEIu-XadfR1VaLjITl1J0Uz5pm4_g/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-orange-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-700 transition-colors text-center"
+          >
+            Get Tickets
+          </a>
         </div>
       </div>
     </div>
