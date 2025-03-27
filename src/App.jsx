@@ -23,9 +23,9 @@ export default function UNSWOpenDay() {
   }, []);
 
   return (
-    <div className="mx-auto font-sans">
+    <div className="mx-auto font-sans overflow-x-hidden w-full">
       {/* Banner with pattern background - full width */}
-      <div className="relative w-full mb-6 overflow-hidden rounded-lg banner-section">
+      <div className="relative w-full mb-6 overflow-hidden banner-section">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-blue-50">
           <div className="absolute -left-20 top-0 h-full w-1/3">
@@ -66,15 +66,15 @@ export default function UNSWOpenDay() {
           <img
             src={Image}
             alt="UNSW student with yellow bag"
-            className="w-[200%] h-auto hidden md:block"
+            className="w-full h-auto hidden md:block"
           />
         </div>
       </div>
 
       {/* Content container with max-width */}
-      <div className="relative flex gap-8 max-w-5xl mx-auto">
+      <div className="relative flex flex-col md:flex-row gap-8 max-w-5xl mx-auto px-4 pb-24 md:pb-0">
         {/* Main content */}
-        <div className="max-w-2xl">
+        <div className="w-full md:max-w-2xl">
           <div className="p-4">
             {/* Header */}
             <div className="mb-4">
@@ -277,7 +277,7 @@ export default function UNSWOpenDay() {
             </div>
 
             {/* Organized by */}
-            <div className="mb-6">
+            <div className="mb-6 md:mb-0">
               <h2 className="text-lg font-bold mb-2">Organized by</h2>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -303,7 +303,7 @@ export default function UNSWOpenDay() {
         </div>
 
         {/* Desktop sticky ticket section */}
-        <div className="w-60 h-fit sticky top-6 hidden md:block">
+        <div className="w-full md:w-60 h-fit sticky top-6 hidden md:block">
           <div className="bg-gray-100 rounded-lg p-2 shadow-sm text-center">
             <h3 className="text-xl text-slate-600 mb-4">Free</h3>
             <a
